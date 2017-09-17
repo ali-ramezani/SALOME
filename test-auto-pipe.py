@@ -1,26 +1,3 @@
-# SALOME
-Some usefull tips and codes for SALOME Platform (http://www.salome-platform.org/)
-
-## Make pipe using center line and fillet radios 
-
-There is a extrude feature in SALOME but it doesn't make orthogonal extrusion. i.e you have a bended curve and like to have pipe around it, SALOME has no option to make it and you have to do it manually.
-
-The present code make it easy.
-
-![img](auto-pipe.png) 
-
-Here is the code that you need to make above figure:
-
-~~~python
-obj3=AutoFiletCyl([[0,0,0],[0,2,5],[4,0,6],[4,0,8],[6,9,2]],[1.5,1,0.5],0.1)
-
-geompy.addToStudy( obj3, 'obj3' )
-
-~~~
-
-The complete code of the tool is in the following. Obviously you can embed tool in your script like the example or put it in a separate file and import it as a module.
-
-~~~python
 # -*- coding: utf-8 -*-
 
 ###
@@ -168,6 +145,3 @@ geompy.addToStudy( obj3, 'obj3' )
 
 if salome.sg.hasDesktop():
   salome.sg.updateObjBrowser(1)
-
-~~~
-
